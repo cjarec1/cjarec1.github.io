@@ -5,7 +5,7 @@ html, body{
 }
 
 body{
-    padding: 25px 200px;
+    /* padding: 25px 200px; */
     margin: 0px;
     background-color: #CFD2E7;
     /* border: 1px solid black; */
@@ -35,15 +35,21 @@ p {
     font-weight: lighter;
 }
 
+.contr{
+    padding: 25px 200px;
+}
+
 .name{
     font-family: "Abril Fatface";
     font-size: 42px;
     display: inline-block;
     color: #362D3D;
+    position: absolute;
+    right: 10px;
 }
 
-.nav{
-    margin: -30px -10px 0;
+.navbar{
+    margin: -20px -10px 0;
     padding: 30px 5px 0;
     width: 100%;
     background-color: #8494A8;
@@ -80,7 +86,19 @@ p {
     background-position: 0 100%;
 }
 
-/* .current{
+.active{
     background-color: #A9F2EB;
     color: black;
-} */
+}
+
+.navbar-toggler{
+    float: left;
+    border: 0px;
+    padding:10px;
+    margin-top: 10px;
+}
+
+.nav-link{
+    /* display: inline-block; */
+    margin-top: 20px;
+}
