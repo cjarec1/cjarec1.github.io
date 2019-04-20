@@ -1,45 +1,22 @@
-/**************************************************************************
- *                                                                        *
- *  JAVASCRIPT MENU HIGHLIGHTER v.1.5 (080929)                            *
- * --------------------------------------------                           *
- * �2005 Media Division (www.MediaDivision.com)                           *
- *                                                                        *
- * Written by Marius Smarandoiu & Armand Niculescu                        *
- *                                                                        *
- * You are free to use, modify and distribute this file, but please keep  *
- * this header and credits                                                *
- *                                                                        *
- * Usage:                                                                 *
- * - the script will apply the .current class to the <a> and its parent   *
- *   <li> that is contained in the element with id="primarynav" and points*
- *   to the current URL                                                   *
- * - works in IE6, Firefox and Opera                                      *
- **************************************************************************/
-function extractPageName(hrefString)
-{
-	var arr = hrefString.split('/');
-	return  (arr.length < 2) ? hrefString : arr[arr.length-2].toLowerCase() + arr[arr.length-1].toLowerCase();
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
 }
 
-function setActiveMenu(arr, crtPage)
-{
-	for (var i=0; i < arr.length; i++)
-	{
-		if(extractPageName(arr[i].href) == crtPage)
-		{
-			if (arr[i].parentNode.tagName != "DIV")
-			{
-				arr[i].className = "current";
-				arr[i].parentNode.className = "current";
-			}
-		}
-	}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
 }
 
-function setPage()
-{
-	hrefString = document.location.href ? document.location.href : document.location;
-
-	if (document.getElementsByClassName("nav") !=null )
-	    setActiveMenu(document.getElementsByClassName("nav").getElementsByTagName("a"), extractPageName(hrefString));
-}
+//make for loop, adding number to end of image so the image can be displayed
