@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://www.w3schools.com/lib/w3.js"></script>
     <div w3-include-html="header.html"></div>
     <script>
@@ -37,7 +38,7 @@
                 <div class="col-sm-3">
                     <!-- <img id="myImg" src="img/qwabble.png" alt="Qwabble" type="button" width="100%" data-toggle="modal" data-target="#myModal"> -->
                     <!-- Trigger the Modal -->
-                    <img id="myImg" src="img/qwabble.png" alt="Qwabble" style="width:100%">
+                    <img class="myImg" src="img/qwabble.png" alt="Qwabble" style="width:100%">
                 </div>
                 <div class="col-sm-2"></div>
                 <div class="col-sm-5">
@@ -52,7 +53,7 @@
             <h2><a href="https://github.com/Garen7/dmCapstone">Friend Re-Quest</a></h2>
             <div class="row adjust-row">
                 <div class="col-sm">
-                    <img id="myImg1" src="img/frq.jpg" alt="Qwabble" width="100%">
+                    <img class="myImg" src="img/frq.jpg" alt="Qwabble" width="100%">
                 </div>
                 <div class="col-sm-5">
                     <p>Our team created a multiplayer Android game in Unity for our Senior Capstone. Together, the team fights
@@ -80,7 +81,7 @@
             <h2><a href="https://github.com/LSU-UE4/final-project-screams">Unreal Engine Final Project</a></h2>
             <div class="row adjust-row">
                 <div class="col-sm">
-                    <img id="myImg3" src="img/unreal.jpg" alt="Unreal Engine Final Project" width="100%">
+                    <img class="myImg" src="img/unreal.jpg" alt="Unreal Engine Final Project" width="100%">
                 </div>
                 <div class="col-sm-5">
                     <p>Our team created a project in Unreal Engine where the player must go into different rooms and solve puzzles
@@ -94,12 +95,13 @@
             <h2><a href="https://github.com/cjarec1/UnityFinal">Unity Final Project</a></h2>
             <div class="row adjust-row">
                 <div class="col-sm">
-                    <img id="myImg4" src="img/unity.jpg" alt="unity" width="100%">
+                    <img class="myImg" src="img/unity.jpg" alt="unity" width="100%">
                 </div>
                 <div class="col-sm-5">
-                    <p>I created a simple game in Unity. The player is a roomba that needs to collect all the dust particles in the room
-                        while being chased by a cat NPC. I implemented most aspects of the game, including placing all of the objects in the room,
-                        editing the scripts so they fit my game, and worked with lighting and post-processing effects.
+                    <p>I created a simple game in Unity. The player is a roomba that needs to collect all the dust particles
+                        in the room while being chased by a cat NPC. I implemented most aspects of the game, including placing
+                        all of the objects in the room, editing the scripts so they fit my game, and worked with lighting
+                        and post-processing effects.
                     </p>
                 </div>
             </div>
@@ -109,7 +111,7 @@
             <h2><a href="https://github.com/cjarec1/Project-D.O.M.E.">Project D.O.M.E.</a></h2>
             <div class="row adjust-row">
                 <div class="col-sm">
-                    <img id="myImg5" src="img/dome.png" alt="Dome" width="100%">
+                    <img class="myImg" src="img/dome.png" alt="Dome" width="100%">
                 </div>
                 <div class="col-sm-5">
                     <p>Our team created a PC game in Unity where the player must survive for as long as possible. The player
@@ -147,6 +149,42 @@
         <!-- Modal Content (The Image) -->
         <!-- <img class="modal-content" id="img01"> -->
         <!-- </div> -->
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- The Close Button -->
+            <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        <script>
+            // Get the modal
+            var modal = document.getElementById('myModal');
+
+            // Get the image and insert it inside the modal - use its "alt" text as a caption
+            var img = $('.myImg');
+            var modalImg = $("#img01");
+            var captionText = document.getElementById("caption");
+            $('.myImg').click(function () {
+                modal.style.display = "block";
+                var newSrc = this.src;
+                modalImg.attr('src', newSrc);
+                captionText.innerHTML = this.alt;
+            });
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+        </script>
     </div>
     <div w3-include-html="footer.html"></div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
