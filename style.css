@@ -164,29 +164,45 @@ li a:hover, p a:hover {
     margin:10px;
 }
 
-.exp{
+/* .exp{
     background:#B1BDCF;
     position: relative;
-    border: 1px solid green;
 }
 
 .legend{
     background-color: aqua;
     position: relative;
-    top: -50px;
+    top: -40px;
     float: right;
-    border: 1px solid red;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 0 5px;
 }
 
 .skills{
     position: relative;
-    top: 0px;
-    color:#5D8094;
+    top: -40px;
+    color: #5D8094;
     font-size: 150%;
-    margin: 30px 10px 10px 10px;
-    border: 1px solid blue;
+    margin: 121px 10px 10px 10px;
+} */
+
+.exp{
+    background:#B1BDCF;
+}
+
+.legend{
+    background-color: #8494A8;
+    font-family: "Quicksand";
+    font-size: 90%;
+    color: #362D3D;
+    font-style: oblique;
+    margin: -10px 0;
+    padding: 5px 10px;
+}
+
+.skills{
+    color: #5D8094;
+    font-size: 150%;
+    margin: 10px;
 }
 
 .img-thumbnail{
